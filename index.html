@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Global Jabr — Digital App Ideas & Full Code</title>
+  <meta name="description" content="Global Jabr — We create and sell ready-to-develop app ideas with full source code." />
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#ff6b35;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.03);
+      --maxw:1100px;
+      --radius:12px;
+      --gap:18px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071023 0%, #0f1724 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:56px;height:56px;border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#ff9a66);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#081022;
+      box-shadow:0 6px 18px rgba(0,0,0,0.5);
+    }
+    h1{margin:0;font-size:20px}
+    p.lead{color:var(--muted);margin:4px 0 0;font-size:13px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:14px}
+    nav a.cta{background:var(--accent);padding:10px 14px;border-radius:10px;color:#071022;margin-left:14px;font-weight:700}
+    main{margin-top:28px}
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      align-items:center;
+    }
+    .card{background:var(--card);padding:22px;border-radius:var(--radius);box-shadow:0 6px 30px rgba(2,6,23,0.6);}
+    .hero-left h2{font-size:28px;margin:0 0 8px}
+    .hero-left p{color:var(--muted);margin:0 0 18px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px 16px;border-radius:10px;color:#e6eef8;text-decoration:none;cursor:pointer}
+    .btn.primary{background:var(--accent);border:none;color:#071022;font-weight:700}
+    .badge{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px;margin-bottom:12px}
+    /* services grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .service{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03)}
+    .service h3{margin:0 0 8px;font-size:16px}
+    .muted{color:var(--muted);font-size:14px}
+    /* portfolio */
+    .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .project{background:linear-gradient(180deg,#071226 0%, #071226 60%);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .project h4{margin:0 0 8px;font-size:15px}
+    .project p{margin:0;color:var(--muted);font-size:13px}
+    /* contact */
+    .contact{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:20px}
+    .form input,.form textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    .form label{display:block;margin-bottom:8px;font-size:13px;color:var(--muted)}
+    footer{margin-top:28px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
+    .social{display:flex;gap:10px}
+    .pill{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:13px;color:var(--muted)}
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid,.portfolio{grid-template-columns:repeat(2,1fr)}
+      .contact{grid-template-columns:1fr}
+    }
+    @media (max-width:520px){
+      .grid,.portfolio{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start;gap:14px}
+    }
+    /* small code block style */
+    pre.code{background:#071829;padding:12px;border-radius:8px;overflow:auto;color:#cfeffd;font-size:12px;border:1px solid rgba(255,255,255,0.03)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">GJ</div>
+        <div>
+          <h1>Global Jabr</h1>
+          <p class="lead">Digital ideas & full-source-code — Ready to buy</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Ideas</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#contact">Sell / Buy</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left card">
+          <span class="badge">Ready-to-ship • Full code</span>
+          <h2>We create app ideas & deliver full source code</h2>
+          <p class="muted">Sell or license complete app concepts with source — save months of development time. We handle idea design, code, and documentation.</p>
+
+          <div class="buttons">
+            <a class="btn primary" id="btnContact">Contact to Buy</a>
+            <a class="btn" id="btnPortfolio">See Ideas</a>
+            <a class="btn" id="btnHow">How it works</a>
+          </div>
+
+          <div style="margin-top:16px;color:var(--muted);font-size:13px">
+            <strong>How we help:</strong> Packaging, secure delivery, and rights transfer after payment.
+          </div>
+        </div>
+
+        <div class="card" style="height:100%;display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <h3 style="margin-top:0">Offer Packages</h3>
+            <div class="grid" style="margin-top:10px;">
+              <div class="service">
+                <h3>Idea Only</h3>
+                <p class="muted">Complete written concept & flow. Delivered as PDF.</p>
+              </div>
+              <div class="service">
+                <h3>Idea + Code</h3>
+                <p class="muted">Full source code + instructions (ready for deployment).</p>
+              </div>
+              <div class="service">
+                <h3>White-label</h3>
+                <p class="muted">Branding and packaging for immediate launch.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="pill">Secure delivery • Ownership transfer</div>
+            <div style="margin-top:8px;color:var(--muted);font-size:13px">We protect your purchase and transfer rights only after confirmed payment.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" style="margin-top:26px">
+        <div class="card">
+          <h3 style="margin:0 0 8px">What we sell</h3>
+          <p class="muted">We prepare complete, documented digital projects tailored for companies and investors.</p>
+
+          <div class="portfolio" id="portfolio" style="margin-top:14px">
+            <!-- sample items -->
+            <div class="project">
+              <h4>Snap-like Stories App</h4>
+              <p>Stories, points, follower mechanics. Web app + ready for PWA packaging.</p>
+              <div style="margin-top:10px"><a class="btn" href="#" onclick="previewIdea(1)">Preview</a> <a class="btn" href="#" onclick="contactBuyer('Snap-like Stories App')">Buy</a></div>
+            </div>
+
+            <div class="project">
+              <h4>Smart Habit Tracker</h4>
+              <p>Habit tracking with stats, notifications, Hive DB (Flutter-ready).</p>
+              <div style="margin-top:10px"><a class="btn" href="#" onclick="previewIdea(2)">Preview</a> <a class="btn" href="#" onclick="contactBuyer('Smart Habit Tracker')">Buy</a></div>
+            </div>
+
+            <div class="project">
+              <h4>Micro Market App</h4>
+              <p>Local marketplace with quick checkout and seller dashboards.</p>
+              <div style="margin-top:10px"><a class="btn" href="#" onclick="previewIdea(3)">Preview</a> <a class="btn" href="#" onclick="contactBuyer('Micro Market App')">Buy</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" style="margin-top:22px">
+        <div class="card">
+          <h3 style="margin:0 0 8px">How it works</h3>
+          <ol style="color:var(--muted);margin:0 0 0 18px">
+            <li>Tell us which package you want (Idea / Idea+Code / White-label).</li>
+            <li>We provide preview & agreement.</li>
+            <li>Payment (wire, PayPal, etc.).</li>
+            <li>We deliver secured PDF with code; ownership transfers after payment.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:22px">
+        <div class="contact">
+          <div class="card form">
+            <h3>Contact / Quick Message</h3>
+            <label for="name">Your name</label>
+            <input id="name" placeholder="Your name" />
+            <label for="email">Email</label>
+            <input id="email" placeholder="you@example.com" />
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Tell us which idea or ask for a preview..."></textarea>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <button class="btn primary" onclick="sendMessage()">Send Message</button>
+              <button class="btn" onclick="openWhatsApp()">WhatsApp</button>
+            </div>
+            <p style="color:var(--muted);font-size:13px;margin-top:10px">Or email us at <strong id="bizEmail">sales@globaljabr.com</strong></p>
+          </div>
+
+          <div class="card">
+            <h3>Contact Info</h3>
+            <p class="muted">Global Jabr — Digital Ideas & Code</p>
+            <p style="margin:8px 0"><strong>Email:</strong> <span id="mailSpan">sales@globaljabr.com</span></p>
+            <p style="margin:8px 0"><strong>WhatsApp:</strong> <a id="waLink" href="https://wa.me/14697939837" target="_blank">+1 469 793 9837</a></p>
+            <p style="margin:8px 0;color:var(--muted)"><strong>Location:</strong> Remote / Worldwide</p>
+
+            <div style="margin-top:12px">
+              <strong>Quick Pitch:</strong>
+              <pre class="code">Global Jabr — Ready app ideas + full source code. Reply "I agree" to accept terms for purchase.</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Global Jabr</div>
+      <div class="social">
+        <a href="#" class="pill" onclick="openLink('https://www.linkedin.com')">LinkedIn</a>
+        <a href="#" class="pill" onclick="openLink('https://twitter.com')">X / Twitter</a>
+        <a href="#" class="pill" onclick="openLink('https://www.facebook.com')">Facebook</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function openLink(url){
+      window.open(url, '_blank');
+    }
+
+    // Quick actions
+    document.getElementById('btnContact').addEventListener('click', ()=>{ document.querySelector('#contact input#name').focus(); location.hash='#contact'; });
+    document.getElementById('btnPortfolio').addEventListener('click', ()=>{ location.hash='#portfolio'; });
+    document.getElementById('btnHow').addEventListener('click', ()=>{ location.hash='#how'; });
+
+    function previewIdea(id){
+      const previews = {
+        1: "Preview: Stories app — features: register/login, temporary stories (24h), points per view, follow system. Contact to request full PDF preview.",
+        2: "Preview: Smart Habit Tracker — features: add habits, local DB, stats, notifications (Flutter-ready). Contact to request full PDF preview.",
+        3: "Preview: Micro Market App — features: listings, quick checkout, seller dashboards. Contact to request full PDF preview."
+      };
+      alert(previews[id] || 'Preview not available.');
+    }
+
+    function contactBuyer(idea){
+      // opens mailto with prefilled content
+      const email = 'sales@globaljabr.com';
+      const subject = encodeURIComponent('Interest in: ' + idea);
+      const body = encodeURIComponent("Hi,\n\nI'm interested in the idea: " + idea + ". Please send preview and purchase options.\n\nBest,\n");
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    }
+
+    function sendMessage(){
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !message){ alert('Please fill name, email and message.'); return; }
+      // open mail client for now (safe & simple)
+      const subject = encodeURIComponent('New inquiry from ' + name);
+      const body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message);
+      window.location.href = `mailto:sales@globaljabr.com?subject=${subject}&body=${body}`;
+    }
+
+    function openWhatsApp(){
+      // change number to your WhatsApp number in international format without plus
+      const number = '14697939837';
+      const text = encodeURIComponent("Hi Global Jabr, I'm interested in your app ideas. Please contact me.");
+      window.open('https://wa.me/' + number + '?text=' + text, '_blank');
+    }
+  </script>
+</body>
+</html>
