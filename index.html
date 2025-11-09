@@ -1,122 +1,352 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Global Jabr: Source Code & Digital Assets | Flutter & JS</title>
-  <meta name="description" content="Global Jabr - We sell and license exclusive, fully-developed source code for mobile (Flutter) and complex web applications. Ready for immediate deployment." />
-  <style>
-    /* Clean, Professional Dark Theme */
-    :root {
-      --bg: #0c0f13; /* Very dark background */
-      --card: #151a21; /* Slightly lighter for the container */
-      --accent: #0077cc; /* A clean, trusted blue color */
-      --muted: #a0aec0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: #e2e8f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-    }
-    .container {
-      max-width: 650px;
-      padding: 40px;
-      background: var(--card);
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      border-top: 4px solid var(--accent); /* Accent line for style */
-    }
-    .logo {
-      width: 70px; height: 70px; border-radius: 50%;
-      background: var(--accent);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 900; font-size: 32px; color: #fff;
-      margin: 0 auto 15px;
-    }
-    h1 {
-      margin: 0 0 5px;
-      font-size: 36px;
-      color: #fff;
-    }
-    p.lead {
-      color: var(--accent);
-      font-size: 1.2em;
-      margin-bottom: 25px;
-      font-weight: 600;
-    }
-    p.description {
-      color: var(--muted);
-      font-size: 1em;
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
-    .asset-pill {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 8px 16px;
-      border-radius: 4px;
-      font-size: 0.9em;
-      color: var(--muted);
-      margin: 5px;
-    }
-    .contact-link {
-      display: inline-block;
-      background: var(--accent);
-      padding: 15px 30px;
-      border-radius: 8px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 18px;
-      margin-top: 25px;
-      transition: background 0.3s;
-    }
-    .contact-link:hover {
-      background: #005a99;
-    }
-    .footer-note {
-      margin-top: 40px;
-      font-size: 0.8em;
-      color: rgba(255, 255, 255, 0.4);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLOBAL JABR | الريادة والنمو العالمي</title>
+    
+    <style>
+        /* ======================== الألوان والخطوط الأساسية ======================== */
+        :root {
+            --dark-blue: #0d1a29; 
+            --gold: #f1c40f; 
+            --light-bg: #f7f7f7;
+            --text-color: #333;
+            --primary-color: var(--dark-blue);
+            --secondary-color: var(--gold);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #fff;
+            color: var(--text-color);
+            direction: rtl; 
+            text-align: right;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        
+        /* ======================== شريط التنقل والترويسة ======================== */
+        .main-header {
+            background-color: var(--dark-blue);
+            color: #fff;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: sticky; 
+            top: 0;
+            z-index: 1000;
+        }
+        
+        /* **** التعديل الجديد: تنسيق الشعار النصي **** */
+        .text-logo {
+            font-size: 1.8em; 
+            font-weight: 900; 
+            color: var(--gold); 
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .text-logo:hover {
+            color: #fff; 
+        }
+        /* *************************************** */
+
+        .main-nav {
+            display: flex;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            font-weight: bold;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s, color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+        
+        .cta-link {
+            background-color: var(--gold);
+            color: var(--dark-blue) !important;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            border-bottom: none !important;
+        }
+        
+        .cta-link:hover {
+            background-color: #ffda63;
+            color: var(--dark-blue) !important;
+        }
+        
+        .menu-toggle {
+            display: none; 
+        }
+        
+        /* ======================== القسم الرئيسي (Hero) ======================== */
+        .hero-section {
+            background: var(--light-bg);
+            padding: 100px 0;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3em;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        
+        .primary-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        
+        .primary-button:hover {
+            background-color: #2b4869;
+        }
+        
+        /* ======================== الأقسام الداخلية (Sections) ======================== */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .about-us {
+            background-color: #fff;
+        }
+        
+        .services-section {
+            background-color: var(--light-bg);
+        }
+        
+        h2 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--gold);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-grid p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .image-placeholder {
+            height: 300px;
+            background-color: #ccc;
+            border-radius: 8px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .service-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-card h3 {
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        
+        /* ======================== التذييل (Footer) ======================== */
+        .main-footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+        
+        .main-footer a {
+            color: var(--gold);
+            margin-right: 5px;
+        }
+        
+        /* ======================== تصميم الشاشات الصغيرة (Responsive) ======================== */
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr; 
+            }
+        
+            .image-placeholder {
+                order: -1; 
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-header {
+                padding: 10px 20px;
+            }
+            
+            .main-nav {
+                display: none; 
+            }
+
+            .hero-section {
+                padding: 80px 20px;
+            }
+        
+            .hero-content h1 {
+                font-size: 2em;
+            }
+        
+            .section {
+                padding: 40px 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="logo">GJ</div>
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html">
+                <span class="text-logo">GLOBAL JABR</span>
+            </a>
+        </div>
+        
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="mailto:jabralajabr0@gmail.com" class="cta-link">تواصل معنا الآن</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <h1>Global Jabr</h1>
-    <p class="lead">Exclusive Source Code & Digital Assets</p>
-    <p class="description">
-      Specializing in complete, ready-to-deploy software solutions using **Flutter** for cross-platform mobile apps 
-      and advanced **JavaScript** for custom web engines. We offer full ownership transfer.
-    </p>
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1>انطلق نحو العالمية مع **GLOBAL JABR**</h1>
+                <p>قيادتكم نحو آفاق جديدة من النمو والاستدامة عبر حلولنا المبتكرة والخبرة العالمية.</p>
+                <a href="#services" class="primary-button">اكتشف خدماتنا</a>
+            </div>
+        </section>
+        
+        <section id="about" class="section about-us">
+            <div class="container">
+                <h2>🌍 رؤيتنا وقيمنا</h2>
+                <div class="about-grid">
+                    <div class="text-content">
+                        <p>
+                            تأسست **GLOBAL JABR** على مبدأ أن كل مشروع يستحق فرصة النمو والريادة عالميًا. نحن لسنا مجرد شركة، بل شريك استراتيجي يلتزم بتجاوز التوقعات. ندمج المعرفة العميقة بالسوق مع أحدث التقنيات لتقديم استشارات وحلول [اذكر مجال عملك] تضمن نجاحكم.
+                        </p>
+                        <p>
+                            **قيمنا الأساسية:** الريادة، الجودة، الشفافية، والالتزام بالنتائج.
+                        </p>
+                    </div>
+                    <div class="image-placeholder">
+                        </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="assets-list">
-      <span class="asset-pill">Flutter Apps</span>
-      <span class="asset-pill">Custom Backend APIs</span>
-      <span class="asset-pill">Web Engine Logic</span>
-    </div>
-
-    <a 
-      href="mailto:jabralajabr0@gmail.com?subject=Inquiry%20for%20Source%20Code%20Purchase" 
-      class="contact-link"
-    >
-      Inquire to Buy Source Code
-    </a>
-
-    <p class="footer-note">
-      Direct Contact: jabralajabr0@gmail.com
-      <br>&copy; 2025 Global Jabr. All Rights Reserved.
-    </p>
-  </div>
-
+        <section id="services" class="section services-section">
+            <div class="container">
+                <h2>حلولنا العالمية</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>التوسع الدولي</h3>
+                        <p>نخطط لانتشاركم في أسواق جديدة ونوفر الدعم اللوجستي اللازم.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>الاستشارات الاستراتيجية</h3>
+                        <p>بناء خطط عمل مرنة ومدروسة لضمان استدامة النمو وتحقيق الأهداف.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>التحول الرقمي</h3>
+                        <p>تطبيق أحدث التقنيات الرقمية لرفع كفاءة العمليات الداخلية والخارجية.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="main-footer">
+        <p>&copy; 2024 GLOBAL JABR. جميع الحقوق محفوظة.</p>
+        <p>للتواصل: <a href="mailto:jabralajabr0@gmail.com">jabralajabr0@gmail.com</a></p>
+    </footer>
 </body>
 </html>
